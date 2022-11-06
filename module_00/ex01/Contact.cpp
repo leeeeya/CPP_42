@@ -22,6 +22,8 @@ Contact::~Contact() {
 }
 
 void Contact::_count() {
-	if (_idx < 8)
+	if (_idx < 7)
 		_idx++;
+	else if (_idx == 7)
+		_idx = 0;
 }

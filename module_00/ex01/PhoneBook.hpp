@@ -23,8 +23,8 @@ public:
 	void Search() const;
 
 private:
-	static void _isnum (std::string str);
-	void _check(const std::string& str);
+	void _isnum (std::string str);
+//	void _print(std::string str, );
 };
 
 

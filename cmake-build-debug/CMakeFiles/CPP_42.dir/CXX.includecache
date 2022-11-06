@@ -1,0 +1,24 @@
+#IncludeRegexLine: ^[ 	]*[#%][ 	]*(include|import)[ 	]*[<"]([^">]+)([">])
+
+#IncludeRegexScan: ^.*$
+
+#IncludeRegexComplain: ^$
+
+#IncludeRegexTransform: 
+
+/Users/liya/Desktop/CPP_42/module_00/ex01/Contact.hpp
+iostream
+-
+string
+-
+
+/Users/liya/Desktop/CPP_42/module_00/ex01/PhoneBook.cpp
+PhoneBook.hpp
+/Users/liya/Desktop/CPP_42/module_00/ex01/PhoneBook.hpp
+
+/Users/liya/Desktop/CPP_42/module_00/ex01/PhoneBook.hpp
+Contact.hpp
+/Users/liya/Desktop/CPP_42/module_00/ex01/Contact.hpp
+iostream
+-
+
