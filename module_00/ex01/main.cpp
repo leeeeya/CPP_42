@@ -11,8 +11,9 @@ int main(){
 	std::string action;
 
 	while(true) {
+//		action = "";
 		std::cout << "Please, choose and write the action you want to take:" << std::endl;
-		std::cin >> action;
+		std::getline(std::cin, action);
 
 		if (action == "ADD") {
 			pb.Add();
