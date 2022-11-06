@@ -7,6 +7,7 @@
 
  PhoneBook::PhoneBook() {
 	_i = 0;
+	_len = 0;
 	 std::cout << "PhoneBook is created" << std::endl;
 }
 
@@ -21,76 +22,36 @@ void PhoneBook::_isnum(std::string str) {
 	}
 }
 
-void PhoneBook::Add() {
-	std::string fn, sn, nn, pn, ds;
 
-	std::cout << "Please, input the information of the new contact" << std::endl;
-
-	std::cout << "First name: ";
-	std::getline(std::cin, fn);
-
-	std::cout << "Second name: ";
-	std::getline(std::cin, sn);
-
-	std::cout << "Nickname: ";
-	std::getline(std::cin, nn);
-
-	std::cout << "Phone number: ";
-	std::getline(std::cin, pn);
-	_isnum(pn);
-
-	std::cout << "Darkest secret: ";
-	std::getline(std::cin, ds);
-
-
-	if (_i == 8)
-		_i = 0;
-	contacts[_i].setContact(_i + 1, fn, sn, nn, pn, ds);
-
-	_i++;
-//	if (_i < 8) {
-//		_i++;
-//	}
-//	else {
-//		_i = 0;
-//	}
+std::string PhoneBook::_handleLongStr(const std::string& str) {
+	std::string trimmed;
+	if (str.size() >= 10){
+		trimmed = str.substr(0, 10);
+		trimmed[9] = '.';
+		return trimmed;
+	} else {
+		return str;
+	}
 }
 
-
-void PhoneBook::Search() const {
-	int index;
-
-	if (_i == 0){
-		std::cout << "Phone book is emty!" << std::endl;
-		return;
-	}
+void PhoneBook::_printTable() {
 	std::cout << "+----------+----------+----------+----------+" << std::endl;
 	std::cout << "|   INDEX  |FIRST_NAME| LAST_NAME| NICKNAME |" << std::endl;
 	std::cout << "+----------+----------+----------+----------+" << std::endl;
-	for (int i = 0; i < _i; i++) {
+	for (int i = 0; i < _len; i++) {
 		std::cout << "|" << std::setw(10) << contacts[i].idx;
-		std::cout << "|" << std::setw(10) << contacts[i].firstName;
-		std::cout << "|" << std::setw(10) << contacts[i].secondName;
-		std::cout << "|" << std::setw(10) << contacts[i].nickname;
+		std::cout << "|" << std::setw(10) << PhoneBook::_handleLongStr(contacts[i].firstName);
+		std::cout << "|" << std::setw(10) << PhoneBook::_handleLongStr(contacts[i].secondName);
+		std::cout << "|" << std::setw(10) << PhoneBook::_handleLongStr(contacts[i].nickname);
 		std::cout << "|" << std::endl;
 	}
 	std::cout << "+----------+----------+----------+----------+" << std::endl;
-	// todo > 10 char add .
-
-	std::cout << "Please, choose and enter the index of the contact:" << std::endl;
-	std::cin >> index;
-	if (index < 1 || index > _i)
-		std::cout << "Invalid index entered! Try again" << std::endl;
-	else {
-		index -= 1;
-		std::cout << "First name: " << contacts[index].firstName << std::endl;
-		std::cout << "Second name: " << contacts[index].secondName << std::endl;
-		std::cout << "Nickname: " << contacts[index].nickname << std::endl;
-		std::cout << "Phone number: " << contacts[index].phoneNumber << std::endl;
-		std::cout << "Darkest secret: " << contacts[index].darkestSecret << std::endl;
-	}
-
 }
 
-// todo  add makefile
+void PhoneBook::_checkStr(const std::string& str, const std::string& name) {
+	if (str.empty()){
+		std::cout << "Invalid "<< name << "!" << std::endl;
+		exit (1);
+	}
+}
 

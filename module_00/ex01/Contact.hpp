@@ -20,10 +20,10 @@ public:
 public:
 	Contact();
 	~Contact();
-	void setContact(int i, std::string fn, std::string ln, std::string nn, std::string pn, std::string ds);
 
 private:
-//	void _count();
+	void setContact(int i, std::string fn, std::string ln, std::string nn, std::string pn, std::string ds);
+	void print();
 };
 
 

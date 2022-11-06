@@ -6,7 +6,6 @@
 #define PHONEBOOK_HPP
 
 #include "Contact.hpp"
-#include <iostream>
 
 class PhoneBook {
 public:
@@ -14,17 +13,20 @@ public:
 
 private:
 	int _i;
+	int _len;
 
 public:
 	PhoneBook();
 	~PhoneBook();
 
 	void Add();
-	void Search() const;
+	void Search();
 
 private:
-	void _isnum (std::string str);
-//	void _print(std::string str, );
+	static void _isnum (std::string str);
+	static std::string _handleLongStr (const std::string& str);
+	void _printTable ();
+	static void _checkStr(const std::string& str, const std::string& name);
 };
 
 

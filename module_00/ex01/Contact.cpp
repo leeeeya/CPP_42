@@ -15,16 +15,16 @@ void Contact::setContact(int i, std::string fn, std::string sn, std::string nn, 
 	darkestSecret = ds;
 
 	std::cout << "Contact is created" << std::endl;
-//	_count();
 }
 
 Contact::~Contact() {
 	std::cout << "Contact is destructed" << std::endl;
 }
-//
-//void Contact::_count() {
-//	if (_idx < 7)
-//		_idx++;
-//	else if (_idx == 7)
-//		_idx = 0;
-//}
+
+void Contact::print() {
+	std::cout << "First name: " << this->firstName << std::endl;
+	std::cout << "Second name: " << this->secondName << std::endl;
+	std::cout << "Nickname: " << this->nickname << std::endl;
+	std::cout << "Phone number: " << this->phoneNumber << std::endl;
+	std::cout << "Darkest secret: " << this->darkestSecret << std::endl;
+}
