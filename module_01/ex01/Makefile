@@ -1,9 +1,8 @@
-NAME = announce
+NAME = zombie_horde
 
 SRC = main.cpp \
  		 Zombie.cpp \
-		newZombie.cpp \
-		randomChump.cpp
+		zombieHorde.cpp
 
 HEADER = Zombie.hpp
 

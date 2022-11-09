@@ -3,9 +3,9 @@
 //
 
 #include "Zombie.hpp"
-#include "newZombie.cpp"
 
-void Zombie::randomChump(std::string name){
-	Zombie *zombie = newZombie(name);
-	zombie->announce();
+void randomChump(std::string name){
+	Zombie *z = newZombie(name);
+	z->announce();
+	delete z;
 }

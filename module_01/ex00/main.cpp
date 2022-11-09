@@ -2,10 +2,12 @@
 // Created by Claribel Stefany on 11/7/22.
 //
 
-#include "randomChump.cpp"
+#include "Zombie.hpp"
 
 int main(){
-	Zombie z = Zombie();
-	z.randomChump("Sammy");
+	Zombie z = Zombie("Alex");
+	z.announce();
+
+	randomChump("Sammy");
 	return 0;
 }

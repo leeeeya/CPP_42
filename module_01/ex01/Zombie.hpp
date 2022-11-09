@@ -12,17 +12,17 @@ private:
 	std::string name;
 
 public:
-	Zombie(const std::string& name): name(name){
-		std::cout << "Zombie " << name << " is created" << std::endl;
+	Zombie(){
+		std::cout << "Zombie is created" << std::endl;
 	};
 	~Zombie(){
 		std::cout << "Zombie " << name << " died" << std::endl;
 	};
 
 	void announce();
+	void setName(std::string name);
 };
 
-void randomChump(std::string name);
-Zombie *newZombie(std::string name);
+Zombie* zombieHorde( int N, std::string name );
 
 #endif //CPP_42_ZOMBIE_HPP

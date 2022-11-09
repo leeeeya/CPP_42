@@ -1,11 +1,6 @@
-NAME = announce
+NAME = brain
 
-SRC = main.cpp \
- 		 Zombie.cpp \
-		newZombie.cpp \
-		randomChump.cpp
-
-HEADER = Zombie.hpp
+SRC = main.cpp
 
 FLAGS = -Wall -Wextra -Werror -std=c++98
 

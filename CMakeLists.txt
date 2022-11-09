@@ -3,4 +3,4 @@ project(CPP_42)
 
 set(CMAKE_CXX_STANDARD 98)
 
-add_executable(CPP_42 module_01/ex00/Zombie.cpp module_01/ex00/main.cpp module_01/ex00/newZombie.cpp module_01/ex00/randomChump.cpp)
+add_executable(CPP_42 module_01/ex04/main.cpp module_01/ex05/Harl.cpp)
