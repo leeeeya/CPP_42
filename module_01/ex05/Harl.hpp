@@ -20,7 +20,9 @@ private:
 
 public:
 	Harl();
-	~Harl();
+	~Harl(){
+		std::cout << "Harl is destructed!" << std::endl;
+	};
 	void complain( std::string level );
 };
 

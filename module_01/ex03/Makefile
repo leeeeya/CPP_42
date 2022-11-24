@@ -12,7 +12,7 @@ FLAGS = -Wall -Wextra -Werror -std=c++98
 
 all : $(NAME)
 
-$(NAME) : $(CONTACT_H) $(PHONE_BOOK_H)
+$(NAME) : $(HUMAN_A_H) $(HUMAN_B_H)
 	c++ $(FLAGS) $(SRC) -o $@
 
 clean :

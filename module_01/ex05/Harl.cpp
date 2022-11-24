@@ -24,7 +24,14 @@ void Harl::error(void) {
 
 }
 
-void Harl::complain(std::string level) {
+void Harl::complain(std::string lvl) {
+	for(int i = 0; i < 4; i++){
+		if (_level[i] == lvl){
+			(this->*this->_method[i])();
+			return;
+		}
+	}
+	std::cout << "ERROR: No such level of message!" << std::endl;
 
 }
 
